@@ -69,9 +69,6 @@ tasks {
         )
 
         filesMatching("META-INF/neoforge.mods.toml") { expand(props) }
-
-        val mixinJava = "JAVA_${requiredJava.majorVersion}"
-        filesMatching("*.mixins.json") { expand("java" to mixinJava) }
     }
 
     named("createMinecraftArtifacts") {

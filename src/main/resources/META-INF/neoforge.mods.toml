@@ -1,4 +1,4 @@
-license = "CC0-1.0"
+license = "MIT"
 
 modLoader="javafml"
 loaderVersion="[1,)"
@@ -7,19 +7,12 @@ loaderVersion="[1,)"
 modId = "${id}"
 displayName = "${name}"
 version = "${version}"
-authors = "Me!"
-description = "This is an example description! Tell everyone what your mod is about!"
-
-logoFile = "assets/template/icon.png"
-#displayURL = "..."
-#issueTrackerUrl = "..."
-
-[[mixings]]
-config = "template.mixins.json"
+authors = "rakku212"
+description = "Sends the mod list to the server via a custom plugin channel."
 
 [[dependencies.${id}]]
 modId = "minecraft"
 type = "required"
 versionRange = "${minecraft}"
 ordering = "NONE"
-side = "BOTH"
+side = "CLIENT"
