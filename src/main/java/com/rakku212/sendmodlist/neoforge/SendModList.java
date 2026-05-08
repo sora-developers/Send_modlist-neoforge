@@ -6,7 +6,9 @@ import com.rakku212.sendmodlist.ModListHmac;
 import com.rakku212.sendmodlist.ModListPayloadBuilder;
 import com.rakku212.sendmodlist.ModListProtocol;
 import net.minecraft.client.Minecraft;
+//? if <26 {
 import net.minecraft.client.gui.GuiGraphics;
+//?}
 import net.minecraft.client.multiplayer.ClientCommonPacketListenerImpl;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.Connection;
@@ -129,12 +131,16 @@ public class SendModList {
 
         @SubscribeEvent
         public static void onScreenRenderPost(ScreenEvent.Render.Post event) {
+            //? if <26 {
             ClientState.renderOverlayOnScreen(event.getGuiGraphics(), event.getScreen().width, event.getScreen().height);
+            //?}
         }
 
         @SubscribeEvent
         public static void onRenderGuiPost(RenderGuiEvent.Post event) {
+            //? if <26 {
             ClientState.renderOverlayOnHud(event.getGuiGraphics());
+            //?}
             ClientState.tryDeliverModListPayload();
         }
 
@@ -215,6 +221,7 @@ public class SendModList {
             resetModListSession();
         }
 
+        //? if <26 {
         static void renderOverlayOnScreen(GuiGraphics graphics, int width, int height) {
             if (!awaitingModListAccepted) {
                 return;
@@ -239,6 +246,7 @@ public class SendModList {
             graphics.fill(0, 0, width, height, 0xC0101010);
             graphics.drawCenteredString(Minecraft.getInstance().font, VERIFYING_MODLIST_MESSAGE, width / 2, height / 2 - 9, 0xFFFFFF);
         }
+        //?}
 
         static void tryDeliverModListPayload() {
             if (!awaitingModListAccepted || modListPayloadDelivered) {
