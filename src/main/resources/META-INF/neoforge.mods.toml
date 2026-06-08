@@ -7,8 +7,8 @@ loaderVersion="[1,)"
 modId = "${id}"
 displayName = "${name}"
 version = "${version}"
-authors = "rakku212"
-description = "Sends the mod list to the server via a custom plugin channel."
+authors = "neko developer"
+description = "クライアントのModリストをサーバーに送信するMod"
 
 [[dependencies.${id}]]
 modId = "minecraft"
