@@ -7,7 +7,7 @@ loaderVersion="[1,)"
 modId = "${id}"
 displayName = "${name}"
 version = "${version}"
-authors = "neko developer"
+authors = "nero developer"
 description = "クライアントのModリストをサーバーに送信するMod"
 
 [[dependencies.${id}]]
